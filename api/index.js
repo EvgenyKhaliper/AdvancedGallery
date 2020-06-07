@@ -16,7 +16,7 @@ app.post('/', function (req, res) {
 })
 
 app.get('/', function (req, res) {
-    res.send(state.find(x => x.query != null))
+    res.send(state.find(x => x.query != null)[0])
 })
 
 app.listen(3000, () => console.log(`app listening at http://localhost:3000`))

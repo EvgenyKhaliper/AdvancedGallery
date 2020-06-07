@@ -14,7 +14,8 @@ Simple express.js server to which you can POST a query object, and GET from.
 
 ### Notes
 1. Create branch in github repository with your full name. ie. john-snow
-2. You cannot use any package.
+2. You can use any package.
 3. You should use modern design techniques both for JavaScript, HTML and CSS.
 4. You can replace https://pixabay.com with any other image service you know of.
-5. You will need to understand 'api' inner working to fulfill the task.
+5. You will need to understand 'api' inner workings to fulfill the task.
+6. Make sure your code is modular and gallery can be re-used with other APIs in the future.
