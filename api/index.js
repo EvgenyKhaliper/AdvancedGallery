@@ -7,16 +7,16 @@ app.use(bodyParser.urlencoded({extended: false }))
 app.use(bodyParser.json())
 app.use(cors())
 
-state = []
+state = { query: "" };
+
+app.listen(3001, () => console.log(`app listening at http://localhost:3001`))
 
 app.post('/', function (req, res) {
-    state.push({
-        "query": req.body.query
-    })
+    state.query = req.body.query;
+    res.send("Search Term Was Saved");
 })
 
 app.get('/', function (req, res) {
-    res.send(state.find(x => x.query != null)[0])
+    res.send({ term: state.query })
 })
 
-app.listen(3000, () => console.log(`app listening at http://localhost:3000`))
