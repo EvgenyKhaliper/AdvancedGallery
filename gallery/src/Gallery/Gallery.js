@@ -1,8 +1,22 @@
+import styled from "styled-components";
 import React from "react";
-import { GET_QUERY_URL } from "../constants";
+import Image from "./Image";
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px 15px;
+`;
 
 const Gallery = (props) => {
-  return null;
+  const { images } = props;
+  return (
+    <Wrapper>
+      {images.map((image) => {
+        return <Image key={image.id} {...image} />;
+      })}
+    </Wrapper>
+  );
 };
 
 export default Gallery;
