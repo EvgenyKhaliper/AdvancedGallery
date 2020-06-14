@@ -10,8 +10,10 @@ app.use(bodyParser.json())
 app.use(cors())
 
 app.post('/', async (req, res) => {
-    const filepath = path.join(process.cwd(), "api", "data.json")
+    console.log('here')
+    const filepath = path.join(process.cwd(), "", "data.json")
     let data = await fs.readFile(filepath, "utf-8")
+    console.log(data)
     let queries = []
     if (data) {
         queries = JSON.parse(data)
@@ -27,10 +29,11 @@ app.post('/', async (req, res) => {
 })
 
 app.get('/', async (req, res) => {
-    const filepath = path.join(process.cwd(), "api", "data.json")
-    let data = fs.readFile(filepath, "utf-8")
+    const filepath = path.join(process.cwd(), "", "data.json")
+    let data = await fs.readFile(filepath, "utf-8")
     const queries = JSON.parse(data)
-    res.send(queries[0])
+    console.log('--queries: ', queries)
+    res.send(queries)
 })
 
-app.listen(3000, () => console.log(`app listening at http://localhost:3000`))
+app.listen(3001, () => console.log(`app listening at http://localhost:3001`))
