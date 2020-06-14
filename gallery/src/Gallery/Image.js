@@ -24,7 +24,6 @@ const Tags = styled.div`
 `;
 
 const Image = (props) => {
-  console.log(props);
   const { largeImageURL, previewURL, tags } = props;
   const [showImage, setShowImage] = useState(false);
 
